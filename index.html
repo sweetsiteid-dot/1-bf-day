@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Boyfriend Day, Akbar 🤍</title>
 
-<!-- Google Fonts -->
+<!-- =========================
+     GOOGLE FONTS
+========================= -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -27,9 +38,12 @@ html{
 body{
     background:#080808;
     color:white;
+
     font-family:'Inter', sans-serif;
+
     overflow-x:hidden;
 }
+
 
 /* =========================
    BACKGROUND
@@ -37,133 +51,55 @@ body{
 
 body::before{
     content:"";
+
     position:fixed;
     inset:0;
+
     background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.07), transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 25%);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.07),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,.05),
+            transparent 25%
+        );
+
     pointer-events:none;
+
     z-index:-2;
 }
 
+
 body::after{
     content:"";
+
     position:fixed;
     inset:0;
-    background:linear-gradient(
-        rgba(0,0,0,.25),
-        rgba(0,0,0,.7)
-    );
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.7)
+        );
+
     pointer-events:none;
+
     z-index:-1;
 }
 
-/* =========================
-   PIN SCREEN
-========================= */
-
-#passwordScreen{
-    position:fixed;
-    inset:0;
-    background:#050505;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    padding:25px;
-}
-
-.login-box{
-    width:100%;
-    max-width:390px;
-    padding:42px 28px;
-    text-align:center;
-
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:28px;
-
-    backdrop-filter:blur(20px);
-    box-shadow:0 30px 80px rgba(0,0,0,.7);
-}
-
-.login-small{
-    font-size:11px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:#999;
-    margin-bottom:18px;
-}
-
-.login-box h1{
-    font-family:'DM Serif Display', serif;
-    font-size:42px;
-    font-weight:400;
-    margin-bottom:10px;
-}
-
-.login-box p{
-    color:#999;
-    font-size:13px;
-    line-height:1.7;
-    margin-bottom:30px;
-}
-
-#passwordInput{
-    width:100%;
-    padding:15px;
-
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:14px;
-
-    color:white;
-    text-align:center;
-    font-size:18px;
-    letter-spacing:8px;
-    outline:none;
-}
-
-#passwordInput:focus{
-    border-color:rgba(255,255,255,.4);
-}
-
-.enter-btn{
-    width:100%;
-    margin-top:15px;
-    padding:15px;
-
-    border:none;
-    border-radius:14px;
-
-    background:white;
-    color:#080808;
-
-    font-weight:600;
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.enter-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 30px rgba(255,255,255,.15);
-}
-
-#errorMessage{
-    color:#999;
-    font-size:12px;
-    margin-top:15px;
-    display:none;
-}
 
 /* =========================
    MAIN CONTENT
 ========================= */
 
 #websiteContent{
-    display:none;
+    display:block;
 }
+
 
 /* =========================
    HERO
@@ -173,115 +109,286 @@ body::after{
     min-height:100vh;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
-    padding:30px;
+
+    padding:50px 25px;
+
     position:relative;
 }
 
+
 .hero-label{
     font-size:10px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
+
     color:#888;
+
     margin-bottom:25px;
+
+    animation:fadeUp 1s ease both;
 }
+
 
 .hero h1{
     font-family:'DM Serif Display', serif;
-    font-size:clamp(50px,13vw,100px);
+
+    font-size:clamp(
+        50px,
+        13vw,
+        100px
+    );
+
     font-weight:400;
+
     line-height:.95;
+
+    animation:fadeUp 1s ease .1s both;
 }
+
 
 .hero h1 span{
     color:#aaa;
 }
 
+
 .hero-sub{
     max-width:500px;
+
     color:#999;
+
     margin-top:25px;
+
     font-size:14px;
+
     line-height:1.8;
+
+    animation:fadeUp 1s ease .2s both;
 }
 
+
 .hero-from{
-    margin-top:35px;
+    margin-top:30px;
+
     font-size:12px;
+
     letter-spacing:3px;
+
     color:#777;
+
     text-transform:uppercase;
+
+    animation:fadeUp 1s ease .3s both;
 }
+
 
 .hero-from strong{
     color:white;
 }
 
-/* scroll */
+
+/* =========================
+   HERO MUSIC
+========================= */
+
+.hero-music{
+    width:100%;
+
+    max-width:430px;
+
+    margin-top:40px;
+
+    padding:22px 22px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.11);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+    text-align:left;
+
+    animation:
+        fadeUp 1s ease .4s both;
+}
+
+
+.music-label{
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#777;
+
+    margin-bottom:9px;
+}
+
+
+.music-title{
+    font-family:'DM Serif Display',serif;
+
+    font-size:26px;
+
+    color:#eee;
+}
+
+
+.music-subtitle{
+    font-size:11px;
+
+    color:#777;
+
+    margin-top:5px;
+
+    margin-bottom:17px;
+}
+
+
+.hero-music audio{
+    width:100%;
+
+    height:38px;
+
+    opacity:.85;
+}
+
+
+/* =========================
+   SCROLL
+========================= */
 
 .scroll{
     position:absolute;
-    bottom:30px;
+
+    bottom:28px;
+
     font-size:10px;
+
     letter-spacing:3px;
+
     color:#666;
+
+    animation:
+        scrollPulse 2s infinite;
 }
 
+
+@keyframes scrollPulse{
+
+    0%,100%{
+        opacity:.4;
+        transform:translateY(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(5px);
+    }
+
+}
+
+
 /* =========================
-   SECTION
+   SECTIONS
 ========================= */
 
 section{
     padding:100px 20px;
+
     max-width:900px;
+
     margin:auto;
 }
 
+
 .section-label{
     font-size:10px;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
+
     color:#666;
+
     margin-bottom:20px;
 }
 
+
 .section-title{
     font-family:'DM Serif Display', serif;
+
     font-size:45px;
+
     font-weight:400;
+
     margin-bottom:30px;
+
+    line-height:1.05;
 }
+
 
 /* =========================
    LETTER
 ========================= */
 
 .letter{
-    background:rgba(255,255,255,.035);
-    border:1px solid rgba(255,255,255,.09);
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.09);
 
     padding:35px 28px;
+
     border-radius:25px;
 
     line-height:2;
+
     color:#c9c9c9;
+
     font-size:14px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.2);
 }
+
 
 .letter p{
     margin-bottom:20px;
 }
 
+
 .signature{
     margin-top:30px;
+
     font-family:'DM Serif Display', serif;
+
     font-size:27px;
+
     color:white;
 }
+
 
 /* =========================
    PHOTO GRID
@@ -289,110 +396,147 @@ section{
 
 .photo-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:12px;
 }
 
+
 .photo{
     position:relative;
+
     overflow:hidden;
+
     border-radius:20px;
+
     background:#111;
+
+    border:
+        1px solid rgba(255,255,255,.05);
 }
+
 
 .photo:first-child{
     grid-column:span 2;
 }
 
+
 .photo img{
     width:100%;
+
     height:100%;
+
     min-height:260px;
+
     object-fit:cover;
+
     display:block;
 
-    filter:brightness(.82);
-    transition:.7s;
+    filter:
+        brightness(.82)
+        saturate(.8);
+
+    transition:
+        transform .7s ease,
+        filter .7s ease;
 }
+
 
 .photo:hover img{
-    transform:scale(1.05);
-    filter:brightness(1);
+    transform:scale(1.06);
+
+    filter:
+        brightness(1)
+        saturate(1);
 }
+
 
 /* =========================
-   SONG
+   PHOTO OVERLAY
 ========================= */
 
-.song-card{
-    padding:35px 25px;
-    border-radius:25px;
+.photo::after{
+    content:"";
 
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,.025)
-    );
+    position:absolute;
 
-    border:1px solid rgba(255,255,255,.1);
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.3),
+            transparent 50%
+        );
+
+    pointer-events:none;
 }
 
-.song-card small{
-    color:#777;
-    letter-spacing:3px;
-    font-size:9px;
-    text-transform:uppercase;
-}
-
-.song-card h3{
-    font-family:'DM Serif Display',serif;
-    font-size:34px;
-    font-weight:400;
-    margin:12px 0;
-}
-
-.song-card p{
-    color:#888;
-    font-size:13px;
-}
 
 /* =========================
    FINAL
 ========================= */
 
 .final{
-    min-height:80vh;
+    min-height:85vh;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
+
+    padding:50px 25px;
 }
+
 
 .final h2{
     font-family:'DM Serif Display',serif;
-    font-size:clamp(45px,11vw,80px);
+
+    font-size:
+        clamp(
+            45px,
+            11vw,
+            80px
+        );
+
     font-weight:400;
+
     line-height:1;
 }
 
+
 .final p{
     max-width:450px;
+
     color:#888;
+
     margin-top:25px;
+
     line-height:1.8;
+
     font-size:13px;
 }
 
+
 .final .heart{
     margin-top:35px;
-    font-size:28px;
-    animation:pulse 1.8s infinite;
+
+    font-size:32px;
+
+    animation:
+        pulse 1.8s infinite;
 }
 
+
 @keyframes pulse{
+
     0%,100%{
         transform:scale(1);
     }
@@ -400,7 +544,9 @@ section{
     50%{
         transform:scale(1.18);
     }
+
 }
+
 
 /* =========================
    FLOATING HEARTS
@@ -408,30 +554,70 @@ section{
 
 .heart-float{
     position:fixed;
+
     bottom:-20px;
-    color:rgba(255,255,255,.25);
+
+    color:
+        rgba(255,255,255,.25);
+
     pointer-events:none;
-    animation:floatUp linear forwards;
+
+    animation:
+        floatUp linear forwards;
+
     z-index:1;
 }
+
 
 @keyframes floatUp{
 
     0%{
-        transform:translateY(0) scale(.7);
+        transform:
+            translateY(0)
+            scale(.7);
+
         opacity:0;
     }
+
 
     20%{
         opacity:1;
     }
 
+
     100%{
-        transform:translateY(-110vh) scale(1.2);
+        transform:
+            translateY(-110vh)
+            scale(1.2);
+
         opacity:0;
     }
 
 }
+
+
+/* =========================
+   FADE UP
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
 
 /* =========================
    MOBILE
@@ -439,20 +625,106 @@ section{
 
 @media(max-width:600px){
 
-    section{
-        padding:80px 18px;
+    .hero{
+        padding:
+            45px 18px;
     }
+
+
+    .hero-label{
+        letter-spacing:4px;
+
+        margin-bottom:20px;
+    }
+
+
+    .hero-sub{
+        font-size:13px;
+
+        max-width:340px;
+    }
+
+
+    .hero-from{
+        margin-top:25px;
+    }
+
+
+    .hero-music{
+        max-width:360px;
+
+        margin-top:32px;
+
+        padding:
+            20px 18px 18px;
+    }
+
+
+    .music-title{
+        font-size:24px;
+    }
+
+
+    section{
+        padding:
+            80px 18px;
+    }
+
+
+    .section-title{
+        font-size:40px;
+    }
+
 
     .photo-grid{
         gap:9px;
     }
 
+
+    .photo{
+        border-radius:16px;
+    }
+
+
     .photo img{
         min-height:210px;
     }
 
+
     .letter{
-        padding:27px 22px;
+        padding:
+            27px 22px;
+
+        font-size:13px;
+    }
+
+
+    .final{
+        min-height:80vh;
+    }
+
+}
+
+
+/* =========================
+   EXTRA SMALL SCREEN
+========================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+
+    .hero-music{
+        padding:
+            18px 15px;
+    }
+
+
+    .section-title{
+        font-size:36px;
     }
 
 }
@@ -465,307 +737,333 @@ section{
 
 
 <!-- =========================
-     PASSWORD
-========================= -->
-
-<div id="passwordScreen">
-
-    <div class="login-box">
-
-        <div class="login-small">
-            a little surprise
-        </div>
-
-        <h1>For Akbar ♡</h1>
-
-        <p>
-            There is something waiting for you inside.<br>
-            Only you can open this.
-        </p>
-
-        <input
-            type="password"
-            id="passwordInput"
-            maxlength="4"
-            placeholder="••••"
-        >
-
-        <button class="enter-btn" onclick="checkPassword()">
-            Open My Heart
-        </button>
-
-        <div id="errorMessage">
-            Wrong PIN. Try again, sayang 🤍
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
      WEBSITE
 ========================= -->
 
 <div id="websiteContent">
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <div class="hero">
+
 
     <div class="hero-label">
         Boyfriend Day · 2026
     </div>
 
+
     <h1>
         Happy<br>
-        <span>Boyfriend Day,</span><br>
+
+        <span>
+            Boyfriend Day,
+        </span>
+
+        <br>
+
         Akbar.
     </h1>
 
+
     <p class="hero-sub">
-        To the person who somehow makes ordinary days
-        feel a little more special.
+
+        To the person who somehow makes
+        ordinary days feel a little more special.
+
     </p>
 
+
     <div class="hero-from">
-        from <strong>Deandra</strong>
+
+        from
+
+        <strong>
+            Deandra
+        </strong>
+
     </div>
+
+
+    <!-- =========================
+         MUSIC
+    ========================= -->
+
+    <div class="hero-music">
+
+
+        <div class="music-label">
+            ✦ a song for you
+        </div>
+
+
+        <div class="music-title">
+            Shape of My Heart
+        </div>
+
+
+        <div class="music-subtitle">
+            press play & listen with me ♡
+        </div>
+
+
+        <audio
+            id="music"
+            controls
+        >
+
+            <source
+                src="shapeofmyheart.mp3"
+                type="audio/mpeg"
+            >
+
+            Your browser does not support
+            the audio element.
+
+        </audio>
+
+
+    </div>
+
 
     <div class="scroll">
         ↓ scroll slowly
     </div>
 
+
 </div>
 
 
-<!-- LETTER -->
+
+<!-- =========================
+     LETTER
+========================= -->
 
 <section>
+
 
     <div class="section-label">
         01 · a little letter
     </div>
 
+
     <div class="section-title">
         For you.
     </div>
 
+
     <div class="letter">
+
 
         <p>
             Happy Boyfriend Day, Akbar. 🤍
         </p>
 
-        <p>
-            I don't always know how to put everything I feel
-            into words, but I hope you know how grateful I am
-            to have you in my life.
-        </p>
 
         <p>
-            Thank you for being someone I can come back to,
-            someone who makes the little things feel meaningful,
-            and someone who makes me feel like I don't have to
-            be anything other than myself.
+
+            I don't always know how to put
+            everything I feel into words,
+            but I hope you know how grateful
+            I am to have you in my life.
+
         </p>
 
-        <p>
-            Maybe our story isn't perfect, and maybe we still
-            have so many things to learn about each other.
-            But if there's one thing I know, it's that
-            I love every little part of our story.
-        </p>
 
         <p>
+
+            Thank you for being someone I can
+            come back to, someone who makes
+            the little things feel meaningful,
+            and someone who makes me feel like
+            I don't have to be anything other
+            than myself.
+
+        </p>
+
+
+        <p>
+
+            Maybe our story isn't perfect,
+            and maybe we still have so many
+            things to learn about each other.
+
+            But if there's one thing I know,
+            it's that I love every little
+            part of our story.
+
+        </p>
+
+
+        <p>
+
             I hope we keep choosing each other,
-            through the easy days, the complicated ones,
-            and all the ordinary moments in between.
+            through the easy days, the complicated
+            ones, and all the ordinary moments
+            in between.
+
         </p>
 
+
         <p>
-            So today isn't just about calling you my boyfriend.
-            It's about celebrating the person you are
-            and how lucky I feel to have you.
+
+            So today isn't just about calling
+            you my boyfriend.
+
+            It's about celebrating the person
+            you are and how lucky I feel
+            to have you.
+
         </p>
+
 
         <div class="signature">
             — Deandra ♡
         </div>
 
+
     </div>
+
 
 </section>
 
 
-<!-- PHOTOS -->
+
+<!-- =========================
+     PHOTOS
+========================= -->
 
 <section>
+
 
     <div class="section-label">
         02 · our little memories
     </div>
 
+
     <div class="section-title">
+
         Five moments,<br>
         one story.
+
     </div>
+
 
     <div class="photo-grid">
 
-        <div class="photo">
-            <img src="foto1.jpg" alt="Memory 1">
-        </div>
 
         <div class="photo">
-            <img src="foto2.jpg" alt="Memory 2">
+
+            <img
+                src="foto1.jpg"
+                alt="Memory 1"
+            >
+
         </div>
 
-        <div class="photo">
-            <img src="foto3.jpg" alt="Memory 3">
-        </div>
 
         <div class="photo">
-            <img src="foto4.jpg" alt="Memory 4">
+
+            <img
+                src="foto2.jpg"
+                alt="Memory 2"
+            >
+
         </div>
 
+
         <div class="photo">
-            <img src="foto5.jpg" alt="Memory 5">
+
+            <img
+                src="foto3.jpg"
+                alt="Memory 3"
+            >
+
         </div>
+
+
+        <div class="photo">
+
+            <img
+                src="foto4.jpg"
+                alt="Memory 4"
+            >
+
+        </div>
+
+
+        <div class="photo">
+
+            <img
+                src="foto5.jpg"
+                alt="Memory 5"
+            >
+
+        </div>
+
 
     </div>
+
 
 </section>
 
 
-<!-- SONG -->
 
-<section>
-
-    <div class="section-label">
-        03 · our song
-    </div>
-
-    <div class="section-title">
-        Press play.
-    </div>
-
-    <div class="song-card">
-
-        <small>
-            playing for you
-        </small>
-
-        <h3>
-            Shape of My Heart
-        </h3>
-
-        <p>
-            A little soundtrack for this little piece
-            of our story.
-        </p>
-
-        <audio
-            id="music"
-            controls
-            style="width:100%; margin-top:25px;"
-        >
-            <source src="shapeofmyheart.mp3" type="audio/mpeg">
-        </audio>
-
-    </div>
-
-</section>
-
-
-<!-- FINAL -->
+<!-- =========================
+     FINAL
+========================= -->
 
 <div class="final">
 
+
     <div class="section-label">
-        04 · one last thing
+        03 · one last thing
     </div>
 
+
     <h2>
+
         I'm glad<br>
         it's you.
+
     </h2>
 
+
     <p>
+
         Out of all the people in this world,
         somehow our paths crossed.
-        And honestly, that's one of my favorite things
-        that ever happened to me.
+
+        And honestly, that's one of my favorite
+        things that ever happened to me.
+
     </p>
+
 
     <div class="heart">
         ♡
     </div>
 
+
     <p style="margin-top:20px;">
+
         Happy Boyfriend Day, Akbar.<br>
+
         Love, Deandra.
+
     </p>
 
+
 </div>
 
 
 </div>
+
 
 
 <script>
-
-/* =========================
-   PASSWORD
-========================= */
-
-function checkPassword(){
-
-    const password =
-        document.getElementById("passwordInput").value;
-
-    const error =
-        document.getElementById("errorMessage");
-
-    if(password === "1111"){
-
-        document.getElementById("passwordScreen")
-        .style.display = "none";
-
-        document.getElementById("websiteContent")
-        .style.display = "block";
-
-        startHearts();
-
-        const music =
-            document.getElementById("music");
-
-        music.volume = 0.45;
-
-    }else{
-
-        error.style.display = "block";
-
-        document.getElementById("passwordInput")
-        .value = "";
-
-    }
-
-}
-
-
-/* ENTER KEY */
-
-document.getElementById("passwordInput")
-.addEventListener("keydown", function(event){
-
-    if(event.key === "Enter"){
-        checkPassword();
-    }
-
-});
-
 
 /* =========================
    FLOATING HEARTS
@@ -776,58 +1074,66 @@ function createHeart(){
     const heart =
         document.createElement("div");
 
-    heart.className = "heart-float";
+
+    heart.className =
+        "heart-float";
+
 
     heart.innerHTML =
-        Math.random() > .5 ? "♡" : "♥";
+        Math.random() > .5
+        ? "♡"
+        : "♥";
+
 
     heart.style.left =
         Math.random() * 100 + "vw";
 
+
     heart.style.fontSize =
         (10 + Math.random() * 16) + "px";
+
 
     heart.style.animationDuration =
         (7 + Math.random() * 7) + "s";
 
+
     document.body.appendChild(heart);
 
+
     setTimeout(() => {
+
         heart.remove();
-    }, 15000);
 
-}
-
-
-function startHearts(){
-
-    setInterval(createHeart, 900);
+    },15000);
 
 }
 
 
 /* =========================
-   AUTO MUSIC AFTER FIRST
-   USER INTERACTION
+   START FLOATING HEARTS
 ========================= */
 
-document.addEventListener("click", function(){
+setInterval(
+    createHeart,
+    900
+);
 
-    const music =
-        document.getElementById("music");
 
-    if(
-        document.getElementById("websiteContent")
-        .style.display === "block"
-    ){
+/* =========================
+   MUSIC VOLUME
+========================= */
 
-        // Tidak memaksa autoplay.
-        // User tetap bisa menekan play.
-    }
+const music =
+    document.getElementById("music");
 
-});
+if(music){
+
+    music.volume = 0.45;
+
+}
 
 </script>
 
+
 </body>
-  </html>
+</html>
